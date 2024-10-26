@@ -8,7 +8,7 @@ function App() {
                 <div className="container mx-auto px-6 py-24">
                     <div className="flex flex-col items-center text-center">
                         <h1 className="text-4xl md:text-6xl font-bold mb-6">Gokul Ramakrishnan</h1>
-                        <p className="text-xl md:text-2xl mb-8 max-w-2xl">Senior Software Developer with expertise in Full Stack Development, Cloud Architecture, and DevOps</p>
+                        <p className="text-xl md:text-2xl mb-8 max-w-2xl">Senior Software Developer with expertise in Full Stack Development, Cloud Architecture, and a strong customer-first mindset.</p>
                         <div className="flex gap-4">
                             <a href="https://github.com/GokulRG" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
                                 <Github size={24} />
@@ -48,6 +48,32 @@ function App() {
                                 <p className="text-gray-600">2022-2024</p>
                             </div>
                             <p className="text-gray-600 mb-4">BILL</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Developed full-stack applications using Java and JavaScript</li>
+                                <li>Optimized application performance and implemented security best practices</li>
+                                <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md">
+                            <div className="flex flex-col md:flex-row justify-between mb-4">
+                                <h3 className="text-xl font-semibold">Software Engineer 2</h3>
+                                <p className="text-gray-600">2019-2022</p>
+                            </div>
+                            <p className="text-gray-600 mb-4">Intuit Inc</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                <li>Developed full-stack applications using Java and JavaScript</li>
+                                <li>Optimized application performance and implemented security best practices</li>
+                                <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
+                            </ul>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-lg shadow-md">
+                            <div className="flex flex-col md:flex-row justify-between mb-4">
+                                <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
+                                <p className="text-gray-600">2017-2019</p>
+                            </div>
+                            <p className="text-gray-600 mb-4">Honeywell International Inc</p>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li>Developed full-stack applications using Java and JavaScript</li>
                                 <li>Optimized application performance and implemented security best practices</li>
