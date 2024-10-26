@@ -65,22 +65,36 @@ function App() {
           <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Frontend</h3>
+              <h3 className="text-xl font-semibold mb-4">Programming Languages</h3>
               <div className="space-y-2">
-                <p className="text-gray-700">React</p>
-                <p className="text-gray-700">JavaScript/TypeScript</p>
+                <p className="text-gray-700">Java</p>
+                <p className="text-gray-700">JavaScript</p>
+                <p className="text-gray-700">Typescript</p>
                 <p className="text-gray-700">HTML/CSS</p>
-                <p className="text-gray-700">Redux</p>
+                <p className="text-gray-700">SQL</p>
               </div>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Backend</h3>
+              <h3 className="text-xl font-semibold mb-4">Databases</h3>
               <div className="space-y-2">
-                <p className="text-gray-700">Java</p>
-                <p className="text-gray-700">Spring Boot</p>
-                <p className="text-gray-700">Node.js</p>
-                <p className="text-gray-700">SQL/NoSQL</p>
+                <p className="text-gray-700">mySQL</p>
+                <p className="text-gray-700">MongoDB</p>
+                <p className="text-gray-700">SQLServerExpress</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Frameworks</h3>
+              <div className="space-y-2">
+                <p className="text-gray-700">React</p>
+                <p className="text-gray-700">Angular</p>
+                <p className="text-gray-700">GrpahQL</p>
+                <p className="text-gray-700">Vite</p>
+                <p className="text-gray-700">Apache Guacamole</p>
+                <p className="text-gray-700">Redux, MobX</p>
+                <p className="text-gray-700">JUnit, Mockito</p>
+
               </div>
             </div>
 
