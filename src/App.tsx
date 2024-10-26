@@ -36,7 +36,7 @@ function App() {
                             </div>
                             <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Led development of microservices-based applications using Spring Boot and React</li>
+                                <li>Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React</li>
                                 <li>Implemented CI/CD pipelines using Jenkins and Docker</li>
                                 <li>Mentored junior developers and conducted code reviews</li>
                             </ul>
