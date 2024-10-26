@@ -34,7 +34,7 @@ function App() {
                                 <h3 className="text-xl font-semibold">Senior Software Developer</h3>
                                 <p className="text-gray-600">2021 - Present</p>
                             </div>
-                            <p className="text-gray-600 mb-4">Infosys Limited</p>
+                            <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li>Led development of microservices-based applications using Spring Boot and React</li>
                                 <li>Implemented CI/CD pipelines using Jenkins and Docker</li>
