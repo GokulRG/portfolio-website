@@ -1,34 +1,53 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+import {DownloadIcon, Github, Linkedin, Mail} from 'lucide-react';
+import headshot from './assets/Headshot.png';
+import {PROFILE_SUMMARY, PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE} from "./utils/constants.ts";
 
 function App() {
+
+    const downloadResume = async () => {
+        const link = document.createElement('a');
+        link.href = `${window.location.origin}/assets/Resume.pdf`; // Adjust the path
+        link.download = 'Gokul-Ramakrishnan-Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-                <div className="container mx-auto px-6 py-24">
-                    <div className="flex flex-col items-center text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">Gokul Ramakrishnan</h1>
-                        <p className="text-xl md:text-2xl mb-8 max-w-2xl">Senior Software Developer with expertise in Full Stack Development, Cloud Architecture, and a strong customer-first mindset.</p>
-                        <div className="flex gap-4">
-                            <a href="https://github.com/GokulRG" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                                <Github size={24} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/gokulramakrishnan/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                                <Linkedin size={24} />
-                            </a>
-                            <a href="mailto:ramakrishnan.go@northeastern.edu" className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                                <Mail size={24} />
-                            </a>
+                <div className="mx-auto px-8 py-24 max-w-fit">
+                    <div className="flex flex-row items-center text-center justify-center">
+                        <div className={'container flex flex-col items-center'}>
+                            <h1 className="text-4xl md:text-6xl font-bold mb-6">Gokul Ramakrishnan</h1>
+                            <p className="text-2xl md:text-2xl mb-8 max-w-4xl">{PROFILE_SUMMARY_TITLE}</p>
+                            <p className="text-xl md:text-xl mb-8 max-w-4xl">{PROFILE_SUMMARY_SUBTITLE}</p>
+                            <div className="flex gap-4">
+                                <a href="https://github.com/GokulRG" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                                    <Github size={24} />
+                                </a>
+                                <a href="https://www.linkedin.com/in/gokulramakrishnan/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                                    <Linkedin size={24} />
+                                </a>
+                                <a href="mailto:ramakrishnan.go@northeastern.edu" className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                                    <Mail size={24} />
+                                </a>
+                                <button onClick={downloadResume} className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                                    <DownloadIcon size={24} />
+                                </button>
+                            </div>
                         </div>
+                        <img className={'pl-4'} src={headshot} height={'500px'} width={'400px'} alt={'headshot'}/>
                     </div>
                 </div>
             </header>
 
             {/* Experience Section */}
             <section className="py-20">
-                <div className="container mx-auto px-6">
+                <div className="continer mx-auto px-6">
                     <h2 className="text-3xl font-bold text-center mb-12">Professional Experience</h2>
-                    <div className="max-w-4xl mx-auto space-y-12">
+                    <div className="max-w-7xl mx-auto space-y-12">
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <div className="flex flex-col md:flex-row justify-between mb-4">
                                 <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
