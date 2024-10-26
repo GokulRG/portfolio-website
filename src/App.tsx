@@ -91,7 +91,6 @@ function App() {
                                 <p className="text-gray-700">GraphQL</p>
                                 <p className="text-gray-700">Vite</p>
                                 <p className="text-gray-700">Apache Guacamole</p>
-                                <p className="text-gray-700">Redux, MobX</p>
                                 <p className="text-gray-700">JUnit, Mockito</p>
 
                             </div>
