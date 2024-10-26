@@ -17,7 +17,7 @@ function App() {
               <a href="https://www.linkedin.com/in/gokulramakrishnan/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-full transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:gokulramakrishnan@outlook.com" className="p-2 hover:bg-white/10 rounded-full transition-colors">
+              <a href="mailto:ramakrishnan.go@northeastern.edu" className="p-2 hover:bg-white/10 rounded-full transition-colors">
                 <Mail size={24} />
               </a>
             </div>
