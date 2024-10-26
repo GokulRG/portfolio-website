@@ -10,8 +10,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prebuild": "cp CNAME dist/",
-    "predeploy": "npm run build",
+    "predeploy": "cp CNAME dist/",
     "deploy": "gh-pages -d dist -r https://x-access-token:${GITHUB_TOKEN}@github.com/GokulRG/portfolio-website.git"
   },
   "dependencies": {
