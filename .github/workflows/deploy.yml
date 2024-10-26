@@ -1,35 +1,35 @@
+---
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
-
+          node-version: "18"
       - name: Install dependencies
         run: npm install
-
-      - name: Set Git config
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Build project
         run: npm run build
-
+      - name: Override .gitignore for dist
+        run: echo '!dist/' >> .gitignore
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: >
+          git config --global user.name 'github-actions[bot]'
+
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add dist -f
+
+          git commit -m 'Deploy to GitHub Pages'
+
+          git push --force origin `git subtree split --prefix dist main`:gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
