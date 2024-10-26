@@ -31,8 +31,8 @@ function App() {
                     <div className="max-w-4xl mx-auto space-y-12">
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Senior Software Developer</h3>
-                                <p className="text-gray-600">2021 - Present</p>
+                                <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
+                                <p className="text-gray-600">2024 - Present</p>
                             </div>
                             <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -44,10 +44,10 @@ function App() {
 
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Software Developer</h3>
-                                <p className="text-gray-600">2018 - 2021</p>
+                                <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
+                                <p className="text-gray-600">2022-2024</p>
                             </div>
-                            <p className="text-gray-600 mb-4">Infosys Limited</p>
+                            <p className="text-gray-600 mb-4">BILL</p>
                             <ul className="list-disc list-inside text-gray-700 space-y-2">
                                 <li>Developed full-stack applications using Java and JavaScript</li>
                                 <li>Optimized application performance and implemented security best practices</li>
