@@ -1,8 +1,10 @@
 {
-  "name": "new-portfolio",
+  "name": "portfolio-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://www.gokulrg-dev.me",
+  "author": "Gokul Ramakrishnan",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
