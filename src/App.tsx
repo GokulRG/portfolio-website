@@ -1,6 +1,6 @@
 import {DownloadIcon, Github, Linkedin, Mail} from 'lucide-react';
 import headshot from './assets/Headshot.png';
-import {PROFILE_SUMMARY, PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE} from "./utils/constants.ts";
+import {PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE} from "./utils/constants.ts";
 
 function App() {
 
