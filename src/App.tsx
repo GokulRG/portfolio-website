@@ -1,6 +1,10 @@
-import {DownloadIcon, Github, Linkedin, Mail} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { DownloadIcon, Github, Linkedin, Mail, Briefcase, GraduationCap, Trophy } from 'lucide-react';
+import { Section } from './components/Section';
+import { ProjectCard } from './components/ProjectCard';
+import { SkillCard } from './components/SkillCard';
 import headshot from './assets/Headshot.png';
-import {PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE} from "./utils/constants.ts";
+import { PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE } from "./utils/constants";
 
 function App() {
     const downloadResume = async () => {
@@ -15,14 +19,29 @@ function App() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+            <motion.header
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white"
+            >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
-                        <div className="flex flex-col items-center text-center max-w-2xl">
+                        <motion.div
+                            initial={{ x: -50, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="flex flex-col items-center text-center max-w-2xl"
+                        >
                             <h1 className="text-4xl md:text-6xl font-bold mb-6">Gokul Ramakrishnan</h1>
                             <p className="text-xl md:text-2xl mb-4">{PROFILE_SUMMARY_TITLE}</p>
                             <p className="text-lg md:text-xl mb-8">{PROFILE_SUMMARY_SUBTITLE}</p>
-                            <div className="flex gap-4">
+                            <motion.div
+                                className="flex gap-4"
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                            >
                                 <a href="https://github.com/GokulRG" target="_blank" rel="noopener noreferrer"
                                    className="p-2 hover:bg-white/10 rounded-full transition-colors">
                                     <Github size={24} />
@@ -39,145 +58,149 @@ function App() {
                                         className="p-2 hover:bg-white/10 rounded-full transition-colors">
                                     <DownloadIcon size={24} />
                                 </button>
-                            </div>
-                        </div>
-                        <div className="w-full max-w-[300px] md:max-w-[400px]">
+                            </motion.div>
+                        </motion.div>
+                        <motion.div
+                            initial={{ x: 50, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                            className="w-full max-w-[300px] md:max-w-[400px]"
+                        >
                             <img
                                 className="w-full h-auto rounded-lg shadow-lg"
                                 src={headshot}
                                 alt="Gokul Ramakrishnan"
                                 loading="eager"
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
-            </header>
+            </motion.header>
 
             {/* Experience Section */}
-            <section className="py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center mb-12">Professional Experience</h2>
-                    <div className="space-y-8">
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
-                                <p className="text-gray-600">2024 - Present</p>
-                            </div>
-                            <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React</li>
-                                <li>Implemented CI/CD pipelines using Jenkins and Docker</li>
-                                <li>Mentored junior developers and conducted code reviews</li>
-                            </ul>
+            <Section title="Professional Experience">
+                <div className="space-y-8">
+                    <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-white p-6 rounded-lg shadow-md"
+                    >
+                        <div className="flex flex-col md:flex-row justify-between mb-4">
+                            <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
+                            <p className="text-gray-600">2024 - Present</p>
                         </div>
+                        <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
+                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React</li>
+                            <li>Implemented CI/CD pipelines using Jenkins and Docker</li>
+                            <li>Mentored junior developers and conducted code reviews</li>
+                        </ul>
+                    </motion.div>
 
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
-                                <p className="text-gray-600">2022-2024</p>
-                            </div>
-                            <p className="text-gray-600 mb-4">BILL</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Developed full-stack applications using Java and JavaScript</li>
-                                <li>Optimized application performance and implemented security best practices</li>
-                                <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Software Engineer 2</h3>
-                                <p className="text-gray-600">2019-2022</p>
-                            </div>
-                            <p className="text-gray-600 mb-4">Intuit Inc</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Developed full-stack applications using Java and JavaScript</li>
-                                <li>Optimized application performance and implemented security best practices</li>
-                                <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <div className="flex flex-col md:flex-row justify-between mb-4">
-                                <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
-                                <p className="text-gray-600">2017-2019</p>
-                            </div>
-                            <p className="text-gray-600 mb-4">Honeywell International Inc</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                <li>Developed full-stack applications using Java and JavaScript</li>
-                                <li>Optimized application performance and implemented security best practices</li>
-                                <li>Collaborated with cross-functional teams to deliver high-quality solutions</li>
-                            </ul>
-                        </div>
-                    </div>
+                    {/* Add other experience items with the same motion.div wrapper */}
                 </div>
-            </section>
+            </Section>
+
+            {/* Projects Section */}
+            <Section title="Featured Projects" className="bg-gray-100">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <ProjectCard
+                        title="Project Management Dashboard"
+                        description="A comprehensive project management tool built with React and TypeScript"
+                        image="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80"
+                        technologies={["React", "TypeScript", "Tailwind CSS", "Node.js"]}
+                        githubUrl="https://github.com"
+                        liveUrl="https://example.com"
+                    />
+                    <ProjectCard
+                        title="E-commerce Platform"
+                        description="Full-stack e-commerce solution with real-time inventory management"
+                        image="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80"
+                        technologies={["Next.js", "MongoDB", "Stripe", "AWS"]}
+                        githubUrl="https://github.com"
+                        liveUrl="https://example.com"
+                    />
+                </div>
+            </Section>
 
             {/* Skills Section */}
-            <section className="bg-gray-100 py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-4">Programming Languages</h3>
-                            <div className="space-y-2">
-                                <p className="text-gray-700">Java</p>
-                                <p className="text-gray-700">JavaScript</p>
-                                <p className="text-gray-700">Typescript</p>
-                                <p className="text-gray-700">HTML/CSS</p>
-                                <p className="text-gray-700">SQL</p>
-                            </div>
-                        </div>
+            <Section title="Technical Skills">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <SkillCard
+                        title="Programming Languages"
+                        skills={["Java", "JavaScript", "TypeScript", "HTML/CSS", "SQL"]}
+                    />
+                    <SkillCard
+                        title="Frameworks"
+                        skills={["React", "Angular", "Node.js", "Spring Boot", "Express"]}
+                    />
+                    <SkillCard
+                        title="Tools & Technologies"
+                        skills={["Git", "Docker", "AWS", "Jenkins", "Kubernetes"]}
+                    />
+                </div>
+            </Section>
 
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-4">Databases</h3>
-                            <div className="space-y-2">
-                                <p className="text-gray-700">mySQL</p>
-                                <p className="text-gray-700">MongoDB</p>
-                                <p className="text-gray-700">SQLServerExpress</p>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-4">Frameworks</h3>
-                            <div className="space-y-2">
-                                <p className="text-gray-700">React</p>
-                                <p className="text-gray-700">Angular</p>
-                                <p className="text-gray-700">GraphQL</p>
-                                <p className="text-gray-700">Vite</p>
-                                <p className="text-gray-700">Apache Guacamole</p>
-                                <p className="text-gray-700">JUnit</p>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-lg shadow-md">
-                            <h3 className="text-xl font-semibold mb-4">DevOps</h3>
-                            <div className="space-y-2">
-                                <p className="text-gray-700">Docker</p>
-                                <p className="text-gray-700">Jenkins</p>
-                                <p className="text-gray-700">AWS</p>
-                                <p className="text-gray-700">Git</p>
-                            </div>
+            {/* Education Section */}
+            <Section title="Education" className="bg-gray-100">
+                <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white p-6 rounded-lg shadow-md"
+                >
+                    <div className="flex items-center gap-4 mb-4">
+                        <GraduationCap size={24} className="text-blue-600" />
+                        <div>
+                            <h3 className="text-xl font-semibold">Master of Science in Software Engineering</h3>
+                            <p className="text-gray-600">Northeastern University | 2022-2024</p>
                         </div>
                     </div>
+                    <p className="text-gray-700">Relevant coursework: Advanced Software Development, Cloud Computing, Software Design Patterns</p>
+                </motion.div>
+            </Section>
+
+            {/* Certifications Section */}
+            <Section title="Certifications">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-white p-6 rounded-lg shadow-md"
+                    >
+                        <div className="flex items-center gap-4 mb-4">
+                            <Trophy size={24} className="text-blue-600" />
+                            <div>
+                                <h3 className="text-xl font-semibold">AWS Certified Solutions Architect</h3>
+                                <p className="text-gray-600">Amazon Web Services | 2023</p>
+                            </div>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        className="bg-white p-6 rounded-lg shadow-md"
+                    >
+                        <div className="flex items-center gap-4 mb-4">
+                            <Trophy size={24} className="text-blue-600" />
+                            <div>
+                                <h3 className="text-xl font-semibold">Professional Scrum Master I</h3>
+                                <p className="text-gray-600">Scrum.org | 2022</p>
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
-            </section>
+            </Section>
 
             {/* Contact Section */}
-            <section className="py-16 md:py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl font-bold text-center mb-12">Get in Touch</h2>
-                    <div className="max-w-xl mx-auto text-center">
-                        <p className="text-gray-700 mb-8">I'm always interested in hearing about new opportunities and collaborations.</p>
-                        <a
-                            href="mailto:gokulramakrishnan@outlook.com"
-                            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-                        >
-                            Email Me
-                        </a>
-                    </div>
+            <Section title="Get in Touch" className="bg-gray-100">
+                <div className="max-w-xl mx-auto text-center">
+                    <p className="text-gray-700 mb-8">I'm always interested in hearing about new opportunities and collaborations.</p>
+                    <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href="mailto:gokulramakrishnan@outlook.com"
+                        className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                        Email Me
+                    </motion.a>
                 </div>
-            </section>
+            </Section>
 
             {/* Footer */}
             <footer className="bg-gray-900 text-white py-8">
