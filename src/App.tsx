@@ -16,7 +16,7 @@ function App() {
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
                     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
                         <div className="flex flex-col items-center text-center max-w-2xl">
                             <h1 className="text-4xl md:text-6xl font-bold mb-6">Gokul Ramakrishnan</h1>
@@ -54,10 +54,10 @@ function App() {
             </header>
 
             {/* Experience Section */}
-            <section className="py-16 md:py-20">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-16 md:py-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center mb-12">Professional Experience</h2>
-                    <div className="max-w-7xl mx-auto space-y-8">
+                    <div className="space-y-8">
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <div className="flex flex-col md:flex-row justify-between mb-4">
                                 <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
@@ -114,10 +114,10 @@ function App() {
             </section>
 
             {/* Skills Section */}
-            <section className="bg-gray-100 py-16 md:py-20">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="bg-gray-100 py-16 md:py-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center mb-12">Technical Skills</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <h3 className="text-xl font-semibold mb-4">Programming Languages</h3>
                             <div className="space-y-2">
@@ -164,8 +164,8 @@ function App() {
             </section>
 
             {/* Contact Section */}
-            <section className="py-16 md:py-20">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="py-16 md:py-24">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl font-bold text-center mb-12">Get in Touch</h2>
                     <div className="max-w-xl mx-auto text-center">
                         <p className="text-gray-700 mb-8">I'm always interested in hearing about new opportunities and collaborations.</p>
@@ -181,7 +181,7 @@ function App() {
 
             {/* Footer */}
             <footer className="bg-gray-900 text-white py-8">
-                <div className="container mx-auto px-4 text-center">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <p>© {new Date().getFullYear()} Gokul Ramakrishnan. All rights reserved.</p>
                 </div>
             </footer>
