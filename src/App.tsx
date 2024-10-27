@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { DownloadIcon, Github, Linkedin, Mail, Briefcase, GraduationCap, Trophy } from 'lucide-react';
+import { DownloadIcon, Github, Linkedin, Mail, GraduationCap, Trophy } from 'lucide-react';
 import { Section } from './components/Section';
 import { ProjectCard } from './components/ProjectCard';
 import { SkillCard } from './components/SkillCard';
