@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
-import { DownloadIcon, Github, Linkedin, Mail, GraduationCap, Trophy } from 'lucide-react';
+import { DownloadIcon, Github, Linkedin, Mail, GraduationCap, Trophy, Briefcase } from 'lucide-react';
 import { Section } from './components/Section';
 import { ProjectCard } from './components/ProjectCard';
 import { SkillCard } from './components/SkillCard';
+import { Carousel } from './components/Carousel';
 import headshot from './assets/Headshot.png';
 import { PROFILE_SUMMARY_SUBTITLE, PROFILE_SUMMARY_TITLE } from "./utils/constants";
 
@@ -15,6 +16,127 @@ function App() {
         link.click();
         document.body.removeChild(link);
     }
+
+    const experience = [
+        {
+            title: "Senior Staff Software Engineer",
+            company: "Palo Alto Networks Ltd",
+            period: "2024 - Present",
+            achievements: [
+                "Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React",
+                "Implemented CI/CD pipelines using Jenkins and Docker",
+                "Mentored junior developers and conducted code reviews"
+            ]
+        },
+        {
+            title: "Lead Software Engineer",
+            company: "Microsoft",
+            period: "2021 - 2024",
+            achievements: [
+                "Architected and developed cloud-native applications using Azure",
+                "Led a team of 5 developers in modernizing legacy systems",
+                "Reduced system downtime by 40% through infrastructure improvements"
+            ]
+        },
+        {
+            title: "Senior Software Engineer",
+            company: "Amazon",
+            period: "2018 - 2021",
+            achievements: [
+                "Developed microservices using AWS Lambda and API Gateway",
+                "Optimized database queries resulting in 30% performance improvement",
+                "Implemented automated testing strategies increasing code coverage to 90%"
+            ]
+        }
+    ];
+
+    const projects = [
+        {
+            title: "Project Management Dashboard",
+            description: "A comprehensive project management tool built with React and TypeScript",
+            image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80",
+            technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+            githubUrl: "https://github.com",
+            liveUrl: "https://example.com"
+        },
+        {
+            title: "E-commerce Platform",
+            description: "Full-stack e-commerce solution with real-time inventory management",
+            image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80",
+            technologies: ["Next.js", "MongoDB", "Stripe", "AWS"],
+            githubUrl: "https://github.com",
+            liveUrl: "https://example.com"
+        },
+        {
+            title: "AI-Powered Analytics",
+            description: "Machine learning platform for business intelligence and data visualization",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
+            technologies: ["Python", "TensorFlow", "React", "D3.js"],
+            githubUrl: "https://github.com",
+            liveUrl: "https://example.com"
+        }
+    ];
+
+    const skills = [
+        {
+            title: "Programming Languages",
+            skills: ["Java", "JavaScript", "TypeScript", "HTML/CSS", "SQL"]
+        },
+        {
+            title: "Frameworks",
+            skills: ["React", "Angular", "Node.js", "Spring Boot", "Express"]
+        },
+        {
+            title: "Tools & Technologies",
+            skills: ["Git", "Docker", "AWS", "Jenkins", "Kubernetes"]
+        },
+        {
+            title: "Cloud Services",
+            skills: ["AWS Lambda", "S3", "EC2", "Azure Functions", "Google Cloud"]
+        },
+        {
+            title: "Database Systems",
+            skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "DynamoDB"]
+        }
+    ];
+
+    const education = [
+        {
+            degree: "Master of Science in Software Engineering",
+            school: "Northeastern University",
+            period: "2022-2024",
+            courses: "Advanced Software Development, Cloud Computing, Software Design Patterns"
+        },
+        {
+            degree: "Bachelor of Engineering in Computer Science",
+            school: "Anna University",
+            period: "2014-2018",
+            courses: "Data Structures, Algorithms, Database Management Systems"
+        }
+    ];
+
+    const certifications = [
+        {
+            title: "AWS Certified Solutions Architect",
+            organization: "Amazon Web Services",
+            year: "2023"
+        },
+        {
+            title: "Professional Scrum Master I",
+            organization: "Scrum.org",
+            year: "2022"
+        },
+        {
+            title: "Azure Solutions Architect Expert",
+            organization: "Microsoft",
+            year: "2023"
+        },
+        {
+            title: "Google Cloud Professional Architect",
+            organization: "Google Cloud",
+            year: "2022"
+        }
+    ];
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -79,111 +201,114 @@ function App() {
 
             {/* Experience Section */}
             <Section title="Professional Experience">
-                <div className="space-y-8">
-                    <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-white p-6 rounded-lg shadow-md"
-                    >
-                        <div className="flex flex-col md:flex-row justify-between mb-4">
-                            <h3 className="text-xl font-semibold">Senior Staff Software Engineer</h3>
-                            <p className="text-gray-600">2024 - Present</p>
-                        </div>
-                        <p className="text-gray-600 mb-4">Palo Alto Networks Ltd</p>
-                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React</li>
-                            <li>Implemented CI/CD pipelines using Jenkins and Docker</li>
-                            <li>Mentored junior developers and conducted code reviews</li>
-                        </ul>
-                    </motion.div>
-
-                    {/* Add other experience items with the same motion.div wrapper */}
+                <div className="px-4 md:px-12">
+                    <Carousel itemWidth={400} gap={24}>
+                        {experience.map((exp, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.02 }}
+                                className="bg-white p-6 rounded-lg shadow-md h-full"
+                            >
+                                <div className="flex items-start gap-4 mb-4">
+                                    <Briefcase size={24} className="text-blue-600 flex-shrink-0 mt-1" />
+                                    <div>
+                                        <h3 className="text-xl font-semibold">{exp.title}</h3>
+                                        <p className="text-gray-600 mb-2">{exp.company}</p>
+                                        <p className="text-gray-500 text-sm mb-4">{exp.period}</p>
+                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                            {exp.achievements.map((achievement, i) => (
+                                                <li key={i}>{achievement}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </Carousel>
                 </div>
             </Section>
 
             {/* Projects Section */}
             <Section title="Featured Projects" className="bg-gray-100">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <ProjectCard
-                        title="Project Management Dashboard"
-                        description="A comprehensive project management tool built with React and TypeScript"
-                        image="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80"
-                        technologies={["React", "TypeScript", "Tailwind CSS", "Node.js"]}
-                        githubUrl="https://github.com"
-                        liveUrl="https://example.com"
-                    />
-                    <ProjectCard
-                        title="E-commerce Platform"
-                        description="Full-stack e-commerce solution with real-time inventory management"
-                        image="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&q=80"
-                        technologies={["Next.js", "MongoDB", "Stripe", "AWS"]}
-                        githubUrl="https://github.com"
-                        liveUrl="https://example.com"
-                    />
+                <div className="px-4 md:px-12">
+                    <Carousel itemWidth={400} gap={24}>
+                        {projects.map((project, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.02 }}
+                                className="h-full"
+                            >
+                                <ProjectCard {...project} />
+                            </motion.div>
+                        ))}
+                    </Carousel>
                 </div>
             </Section>
 
             {/* Skills Section */}
             <Section title="Technical Skills">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <SkillCard
-                        title="Programming Languages"
-                        skills={["Java", "JavaScript", "TypeScript", "HTML/CSS", "SQL"]}
-                    />
-                    <SkillCard
-                        title="Frameworks"
-                        skills={["React", "Angular", "Node.js", "Spring Boot", "Express"]}
-                    />
-                    <SkillCard
-                        title="Tools & Technologies"
-                        skills={["Git", "Docker", "AWS", "Jenkins", "Kubernetes"]}
-                    />
+                <div className="px-4 md:px-12">
+                    <Carousel itemWidth={320} gap={24}>
+                        {skills.map((skillGroup, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.02 }}
+                                className="h-full"
+                            >
+                                <SkillCard
+                                    title={skillGroup.title}
+                                    skills={skillGroup.skills}
+                                />
+                            </motion.div>
+                        ))}
+                    </Carousel>
                 </div>
             </Section>
 
             {/* Education Section */}
             <Section title="Education" className="bg-gray-100">
-                <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-white p-6 rounded-lg shadow-md"
-                >
-                    <div className="flex items-center gap-4 mb-4">
-                        <GraduationCap size={24} className="text-blue-600" />
-                        <div>
-                            <h3 className="text-xl font-semibold">Master of Science in Software Engineering</h3>
-                            <p className="text-gray-600">Northeastern University | 2022-2024</p>
-                        </div>
-                    </div>
-                    <p className="text-gray-700">Relevant coursework: Advanced Software Development, Cloud Computing, Software Design Patterns</p>
-                </motion.div>
+                <div className="px-4 md:px-12">
+                    <Carousel itemWidth={600} gap={24}>
+                        {education.map((edu, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.02 }}
+                                className="bg-white p-6 rounded-lg shadow-md h-full"
+                            >
+                                <div className="flex items-center gap-4 mb-4">
+                                    <GraduationCap size={24} className="text-blue-600 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-semibold">{edu.degree}</h3>
+                                        <p className="text-gray-600">{edu.school} | {edu.period}</p>
+                                    </div>
+                                </div>
+                                <p className="text-gray-700">Relevant coursework: {edu.courses}</p>
+                            </motion.div>
+                        ))}
+                    </Carousel>
+                </div>
             </Section>
 
             {/* Certifications Section */}
             <Section title="Certifications">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-white p-6 rounded-lg shadow-md"
-                    >
-                        <div className="flex items-center gap-4 mb-4">
-                            <Trophy size={24} className="text-blue-600" />
-                            <div>
-                                <h3 className="text-xl font-semibold">AWS Certified Solutions Architect</h3>
-                                <p className="text-gray-600">Amazon Web Services | 2023</p>
-                            </div>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        whileHover={{ scale: 1.02 }}
-                        className="bg-white p-6 rounded-lg shadow-md"
-                    >
-                        <div className="flex items-center gap-4 mb-4">
-                            <Trophy size={24} className="text-blue-600" />
-                            <div>
-                                <h3 className="text-xl font-semibold">Professional Scrum Master I</h3>
-                                <p className="text-gray-600">Scrum.org | 2022</p>
-                            </div>
-                        </div>
-                    </motion.div>
+                <div className="px-4 md:px-12">
+                    <Carousel itemWidth={400} gap={24}>
+                        {certifications.map((cert, index) => (
+                            <motion.div
+                                key={index}
+                                whileHover={{ scale: 1.02 }}
+                                className="bg-white p-6 rounded-lg shadow-md h-full"
+                            >
+                                <div className="flex items-center gap-4">
+                                    <Trophy size={24} className="text-blue-600 flex-shrink-0" />
+                                    <div>
+                                        <h3 className="text-xl font-semibold">{cert.title}</h3>
+                                        <p className="text-gray-600">{cert.organization} | {cert.year}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </Carousel>
                 </div>
             </Section>
 
