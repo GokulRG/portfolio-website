@@ -23,9 +23,9 @@ function App() {
             company: "Palo Alto Networks Ltd",
             period: "2024 - Present",
             achievements: [
-                "Led development of Secure Remote Access solution using Apache Guacamole, TypeScript, and React",
-                "Implemented CI/CD pipelines using Jenkins and Docker",
-                "Mentored junior developers and conducted code reviews"
+                "Led development of Privileged Remote Access solution using Apache Guacamole, TypeScript, React, and Vite",
+                "Spearheaded the integration of the PRA into the existing PAB Platform",
+                "Implemented and enforced best practices in various codebases with respect to code reuse, improving unit test coverage, and adding AI support for code reviews"
             ]
         },
         {
